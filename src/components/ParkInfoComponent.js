@@ -1,26 +1,62 @@
-import React, { Component } from 'react';
-import { Card, CardImg, CardBody, CardTitle } from 'reactstrap';
-import { PARKS } from '../shared/parks';
+import React from 'react';
+import { Card, CardImg, CardBody, CardTitle, CardText } from 'reactstrap';
+//import { PARKS } from '../shared/parks';
 
-class ParkInfo extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      parks: PARKS,
-    };
-  }
-  render() {
-    //const parksInfo = this.state.parks.map((item => <Parks key={item.id} item={item} />)
-
-    return (
-      <div>
-        <CardTitle>Hi</CardTitle>
+function RenderPark({ park }) {
+  return (
+    <div className="col-md-5 m-1">
+      <Card>
+        <CardImg top src={park.image} alt={park.name} />
         <CardBody>
-          <CardImg>{this.state.parks.parkImage}</CardImg>
+          <CardTitle>{park.name}</CardTitle>
+          <CardText>{park.description}</CardText>
         </CardBody>
+      </Card>
+    </div>
+  );
+}
+
+function RenderReviews({ reviews }) {
+  if (reviews) {
+    return (
+      <div className="col-md-5 m-1">
+        <h4> Reviews </h4>
+        {reviews.map((review) => {
+          return (
+            <div key={review.id}>
+              <p>
+                {review.text}
+                <br />
+                --{review.author},{' '}
+              </p>{' '}
+            </div>
+          );
+        })}
       </div>
     );
   }
+  return <div />;
+}
+
+function ParkInfo(props) {
+  if (props.park) {
+    return (
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <h2>{props.park.name}</h2>
+            <hr />
+          </div>
+        </div>
+        <div className="row">
+          <RenderPark park={props.park} />
+          <RenderReviews reviews={props.reviews} />
+        </div>
+      </div>
+    );
+  }
+
+  return <div />;
 }
 
 export default ParkInfo;
