@@ -33,7 +33,7 @@
 }
 
 body {
-  background-color: gray;
+  background-color: rgb(225, 225, 225);
 }
 
 h1,
@@ -45,4 +45,17 @@ h3 {
 .card-body {
   font-family: 'Luckiest Guy';
   font-size: 25px;
+  border-color: black;
+}
+
+.jumbotron {
+  background-color: rgb(95, 210, 249);
+}
+
+.images {
+  max-width: 300px;
+}
+
+.navbar {
+  background-color: rgba(230, 167, 202, 0.954);
 }

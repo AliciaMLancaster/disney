@@ -46,7 +46,7 @@ class Main extends Component {
             path="/park"
             render={() => <Park parks={this.props.parks} />}
           />
-          <Route path="/directory/:parkId" component={ParkWithId} />
+          <Route path="/park/:parkId" component={ParkWithId} />
 
           <Redirect to="/home" />
         </Switch>

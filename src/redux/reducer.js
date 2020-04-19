@@ -1,7 +1,7 @@
 import { PARKS } from '../shared/parks';
 import { REVIEWS } from '../shared/reviews';
 
-export const initialState = {
+const initialState = {
   parks: PARKS,
   reviews: REVIEWS,
 };

@@ -3,10 +3,11 @@ import { Card, CardImg, CardBody, CardTitle, CardText } from 'reactstrap';
 //import { PARKS } from '../shared/parks';
 
 function RenderPark({ park }) {
+  console.log(park.image);
   return (
     <div className="col-md-5 m-1">
       <Card>
-        <CardImg top src={park.image} alt={park.name} />
+        <CardImg className="images" top src={park.image} alt={park.name} />
         <CardBody>
           <CardTitle>{park.name}</CardTitle>
           <CardText>{park.description}</CardText>

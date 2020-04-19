@@ -6,7 +6,7 @@ function RenderParkItem({ park }) {
   return (
     <Card>
       <Link to={`/park/${park.id}`}>
-        <CardImg width="100%" src={park.image} alt={park.name} />
+        <CardImg width="40%" height="40%" src={park.image} alt={park.name} />
         <CardImgOverlay>
           <CardTitle>{park.name}</CardTitle>
         </CardImgOverlay>
